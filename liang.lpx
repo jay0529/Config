@@ -1,9 +1,9 @@
 #!name=🐔去广告
-#!desc=移除懂球帝、大众点评等的广告。
+#!desc=移除kelee遗漏的app的广告。
 #!tag=去广告
 #!system=
 #!system_version=
-#!date=2025-05-13 15:17:08
+#!date=2025-07-09 15:00:00
 
 [Rewrite]
 # > 大众点评
@@ -27,3 +27,6 @@
 # > 直播吧
 ^https?:\/\/a\.qiumibao\.com\/activities\/config\.php url reject
 ^https?:\/\/.+\/allOne\.php\?ad_name url reject
+
+# > 自如
+^https?:\/\/ztoread\.ziroom\.com\/ymerApi\/v\d\/index\/open url reject
