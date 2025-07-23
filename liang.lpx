@@ -7,24 +7,36 @@
 
 [Rewrite]
 # > 大众点评
-# 开屏广告
-^https:\/\/img\.meituan\.net\/dpmobile\/.+93241\.png url reject-dict
-^https?:\/\/img\.meituan\.net\/dpmobile\/.*.(gif|jpg) url reject-200
+#^https?:\/\/img\.meituan\.net\/dpmobile\/ url script-response-body https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/dianping.js
+#^https?:\/\/img\.meituan\.net\/dpmobile\/.+93241\.png url reject-dict
+#^https?:\/\/img\.meituan\.net\/dpmobile\/.*.(gif|jpg) url reject-200
 
 # > 懂球帝
 ^https?:\/\/ap\.dongqiudi\.com\/plat\/v url reject
 
 # > 盒马
+^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.hippotown\.tabbar\.info url reject
+^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.sg\.querysinglescene url reject-dict
+^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.render\.querysinglepage url reject-200
+^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.fc\.recommend\.feedscommondservice url reject-dict
+^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.crm\.platform\.ma\.recommend url reject-dict
+^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.mimir\.recommend\.after\.purchase\.activity url reject-dict
+#^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.render\.query(?>indexpage|mypage|tabfeedstream) url script-response-body https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/freshippo.js
 
 # > 咪咕
-^https?:\/\/gg\w+?\.cmvideo\.cn\/v\d\/iflyad\/ url reject-200
-^https?:\/\/ggic\d?\.cmvideo\.cn\/ad\/ url reject-200
-^https?:\/\/ggx\.cmvideo\.cn\/request\/ url reject-200
-^https?:\/\/.+?\/cdn-adn\/ url reject-200
+^https?:\/\/ggc\.miguvideo\.com\/v1\/iflyad\/deliverysystem\/direct\/ url reject-img
+^https?:\/\/public-deliver9\.miguvideo\.com\/deliver\/site\/batchMatch\/mergeSpot\/miguvideo\/ url reject-dict
+^https?:\/\/recommend-dy\.miguvideo\.com\/recommend-dynamic\/dataSource\/v1\/recommend\/merge url reject-dict
+^https?:\/\/app-sc\.miguvideo\.com\/app-management\/v1\/staticcache\/settings\/miguvideo\/SHARE_PIC url reject-dict
+^https?:\/\/common-sc\.miguvideo\.com\/videoActivity\/activityList\/ url reject-dict
+^https?:\/\/ggx.+\.miguvideo\.com\/request\/sdk.+[^?]*$ url reject-dict
+^https?:\/\/ggic\d+.miguvideo\.com\/ad\/ url reject-dict
+#^https?:\/\/display-sc\.miguvideo\.com\/display\/v3\/static\/PERSONAL_CENTER$ url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/refs/heads/main/Scripts/miguvideo/miguvideo_ads.js
 
 # > 直播吧
 ^https?:\/\/a\.qiumibao\.com\/activities\/config\.php url reject
 ^https?:\/\/.+\/allOne\.php\?ad_name url reject
 
 # > 自如
-^https?:\/\/ztoread\.ziroom\.com\/ymerApi\/v\d\/index\/open url reject
+^https?:\/\/ztoread\.ziroom\.com\/foka-card-api\/popup\/v2\/get url reject-200
+^https?:\/\/ztoread\.ziroom\.com\/ymerApi\/v\d\/index\/open url reject-200
