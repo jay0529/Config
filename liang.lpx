@@ -15,10 +15,6 @@
 ^https?:\/\/ap\.dongqiudi\.com\/plat\/v url reject
 
 # > 盒马
-# 开屏广告 感谢Dragon分享
-^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.wdk\.render\.querysinglepage\/3\.0 url reject-200
-^https?:\/\/([^\/]+\.)?gw\.alicdn\.com.*$ reject-200
-^https?:\/\/([^\/]+\.)?g\.alicdn\.com.*$ reject-200
 
 # > 咪咕
 ^https?:\/\/gg\w+?\.cmvideo\.cn\/v\d\/iflyad\/ url reject-200
