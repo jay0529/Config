@@ -6,30 +6,9 @@
 #!date=2025-07-09 15:00:00
 
 [Rewrite]
-# > 大众点评
-http-response ^https?:\/\/img\.meituan\.net\/dpmobile\/ script-path=https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/dianping.js, requires-body=true, timeout=60, tag=大众点评开屏广告, enable={davsdmpk_enable}
-
 # > 懂球帝
 ^https?:\/\/ap\.dongqiudi\.com\/plat\/v url reject
-
-# > 盒马
-http-response ^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.render\.query(?>indexpage|mypage|tabfeedstream) script-path=https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/freshippo.js, requires-body=true, timeout=60, tag=盒马, enable={hema_enable}
-
-# > 咪咕
-^https?:\/\/ggc\.miguvideo\.com\/v1\/iflyad\/deliverysystem\/direct\/ url reject-img
-^https?:\/\/public-deliver9\.miguvideo\.com\/deliver\/site\/batchMatch\/mergeSpot\/miguvideo\/ url reject-dict
-^https?:\/\/recommend-dy\.miguvideo\.com\/recommend-dynamic\/dataSource\/v1\/recommend\/merge url reject-dict
-^https?:\/\/app-sc\.miguvideo\.com\/app-management\/v1\/staticcache\/settings\/miguvideo\/SHARE_PIC url reject-dict
-^https?:\/\/common-sc\.miguvideo\.com\/videoActivity\/activityList\/ url reject-dict
-^https?:\/\/ggx.+\.miguvideo\.com\/request\/sdk.+[^?]*$ url reject-dict
-^https?:\/\/ggic\d+.miguvideo\.com\/ad\/ url reject-dict
-#^https?:\/\/display-sc\.miguvideo\.com\/display\/v3\/static\/PERSONAL_CENTER$ url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/refs/heads/main/Scripts/miguvideo/miguvideo_ads.js
-http-response ^https?:\/\/display-sc\.miguvideo\.com\/display\/v3\/static\/PERSONAL_CENTER$ script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/refs/heads/main/Scripts/miguvideo/miguvideo_ads.js, requires-body=true, timeout=60, tag=咪咕视频个人中心去广告
 
 # > 直播吧
 ^https?:\/\/a\.qiumibao\.com\/activities\/config\.php url reject
 ^https?:\/\/.+\/allOne\.php\?ad_name url reject
-
-# > 自如
-^https?:\/\/ztoread\.ziroom\.com\/foka-card-api\/popup\/v2\/get url reject-200
-^https?:\/\/ztoread\.ziroom\.com\/ymerApi\/v\d\/index\/open url reject-200
